@@ -1,18 +1,21 @@
 using HotChocolate.AspNetCore;
 using HotChocolate.AspNetCore.Playground;
 using SampleGraphQL;
+using SampleGrapQL;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddSingleton<WeatherForecastService>();
+builder.Services.AddSingleton<NewsService>();
 
 // Add GraphQL services
 builder.Services
     .AddGraphQLServer()
     .AddQueryType<Query>()
-    .AddType<WeatherForecastType>();
+    .AddType<WeatherForecast>()
+    .AddType<NewsArticle>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
