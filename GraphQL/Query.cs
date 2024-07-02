@@ -15,7 +15,7 @@ namespace SampleGraphQL
             _newsService = newsService;
         }
 
-        public async Task<IQueryable<WeatherForecast>> GetWeatherForecastsAsync()
+        public async Task<IQueryable<WeatherForecast>> GetWeatherAsync()
         {
             var forecasts = await _weatherForecastService.GetForecastsAsync();
             return forecasts.AsQueryable();
@@ -23,8 +23,8 @@ namespace SampleGraphQL
 
         public async Task<IQueryable<NewsArticle>> GetNewsAsync()
         {
-            var forecasts = await _newsService.GetNewsAsync();
-            return forecasts.AsQueryable();
+            var news = await _newsService.GetNewsAsync();
+            return news.AsQueryable();
         }
     }
 }

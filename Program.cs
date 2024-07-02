@@ -13,9 +13,7 @@ builder.Services.AddSingleton<NewsService>();
 // Add GraphQL services
 builder.Services
     .AddGraphQLServer()
-    .AddQueryType<Query>()
-    .AddType<WeatherForecast>()
-    .AddType<NewsArticle>();
+    .AddQueryType<Query>();
 
 // Add services to the container.
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
